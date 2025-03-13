@@ -1,0 +1,22 @@
+
+
+.notAppointment {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("https://image.freepik.com/vector-gratis/nino-diciendo-que-no_7710-78.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+.text {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #d95252;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+}

@@ -1,0 +1,39 @@
+.appointment {
+  color: aqua;
+}
+
+.statusActive {
+  background-color: rgb(52,158,168);
+  color: white;
+
+  margin: 2ex;
+  padding: 1ex;
+  border-radius: 0.8ex;
+  cursor: pointer;
+  border-radius: 0.8ex;
+
+}
+
+.statusInactive {
+  background-color: red;
+  color: white;
+  margin: 1ex;
+  padding: 1ex;
+  border-radius: 0.8ex;
+  cursor: pointer;
+}
+
+.container {
+  /* background-color: rgb(59,208,186); */
+  display: flex;
+  align-items: center;
+  
+}
+
+.allContainer {
+  background-color: rgb(210, 210, 210);
+  display: flex;
+  justify-content: space-around;
+  margin: 3ex;
+  border-radius: 1ex;
+}
