@@ -28,7 +28,7 @@ export const formValidates = (input) => {
     } else if (birthdate > today) {
       errorsObject.birthdate = "La fecha de cumpleaños no puede ser futura";
     } else {
-      const age = today.getFullYear() - birthdate.getFullYear();
+      let age = today.getFullYear() - birthdate.getFullYear();
       const monthDifference = today.getMonth() - birthdate.getMonth();
 
       if (

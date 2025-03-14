@@ -2,6 +2,8 @@
 import axios from "axios";
 import { createContext,  useState } from "react";
 
+const URL = "https://turnos-ak0h.onrender.com"
+
 // eslint-disable-next-line react-refresh/only-export-components
 export const UsersContext = createContext({
   user: "",
@@ -21,14 +23,14 @@ export const UsersProvider = ({ children }) => {
   const loginUser =  async (userData) => {
 
 
-   const respuesta = await axios.post ("http://localhost:3000/users/login", userData)
+   const respuesta = await axios.post (`${URL}/users/login`, userData)
    localStorage.setItem("userid", respuesta.data.user.id)
    setUser(respuesta.data.user.id)
    
   }
 
   const registerUser = async (userData)=> {
-   await axios.post("http://localhost:3000/users/register", userData)
+   await axios.post(`${URL}/users/register`, userData)
       
     }
 
@@ -39,12 +41,12 @@ export const UsersProvider = ({ children }) => {
     }
 
     const getUserAppointments = async ( userId ) => {
-      const response = await axios.get(`http://localhost:3000/users/${userId}`)
+      const response = await axios.get(`${URL}/users/${userId}`)
       setUserAppointments(response.data.appointments)
     }
 
     const cancelAppointment = async (appointmentId) => {
-      await axios.put(`http://localhost:3000/appointments/cancel/${appointmentId}`)
+      await axios.put(`${URL}/appointments/cancel/${appointmentId}`)
       const userAppointmentsUpdate = userAppointments.map (appointment => {
         if(appointment.id === appointmentId){
           const appointmentUpdate = {...appointment, status : "cancelled"}
@@ -60,7 +62,7 @@ export const UsersProvider = ({ children }) => {
         ...values,
         userId: user
       }
-      await axios.post(`http://localhost:3000/appointments/shedule`, appointmentValues)
+      await axios.post(`${URL}/appointments/shedule`, appointmentValues)
 
 
     }
